@@ -2,6 +2,7 @@ package com.email.emai.writer;
 
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -29,6 +30,7 @@ public class EmailGeneratorService {
 	// The build() method constructs a new WebClient instance.
 	// The build WebClient is stored in this.webClient, which is
 	// used to make HTTP requests.
+	@Autowired
 	public EmailGeneratorService(WebClient.Builder webClientBuilder) {
 		this.webClient = webClientBuilder.build();
 	}
